@@ -1,0 +1,79 @@
+---
+// Features Bento Grid Section Component
+---
+
+<section id="features" class="container section-py">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 16px;">OS untuk Operasional Influencer</h2>
+        <p style="color: var(--text-muted);">Lupakan Google Sheets yang berantakan. Kami mengotomatisasi bagian yang membosankan agar Anda bisa fokus pada strategi.</p>
+    </div>
+
+    <div class="bento-grid">
+        <div class="bento-item tall">
+            <h3>Smart Matching AI</h3>
+            <p style="margin-bottom: 20px;">Algoritma kami mencocokkan brand Anda dengan KOC yang memiliki audiens relevan, bukan sekadar followers palsu.</p>
+            <div style="background: rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; margin-top: auto;">
+                <div style="font-size: 0.8rem; opacity: 0.7;">Skor Kecocokan</div>
+                <div style="font-size: 1.5rem; font-weight: 700;">98.5%</div>
+            </div>
+        </div>
+        
+        <div class="bento-item large">
+            <h3>Brief & Reporting Otomatis</h3>
+            <p>Kirim brief ke 100 KOC dalam 1 klik. Pantau progress draft hingga posting secara real-time. Terima laporan performa otomatis di akhir campaign.</p>
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                 <span style="padding: 4px 8px; background: #F1F5F9; border-radius: 4px; font-size: 0.8rem;">Brief Terkirim</span>
+                 <span style="font-size: 0.8rem; display: flex; align-items: center;">➝</span>
+                 <span style="padding: 4px 8px; background: #F1F5F9; border-radius: 4px; font-size: 0.8rem;">Review Konten</span>
+                 <span style="font-size: 0.8rem; display: flex; align-items: center;">➝</span>
+                 <span style="padding: 4px 8px; background: #DCFCE7; color: #166534; border-radius: 4px; font-size: 0.8rem;">Dana Cair</span>
+            </div>
+        </div>
+
+        <div class="bento-item">
+            <h3>Deteksi Fraud</h3>
+            <p>Sistem kami memblokir kreator dengan engagement palsu atau bot followers secara otomatis.</p>
+        </div>
+
+        <div class="bento-item">
+            <h3>Pembayaran Terpusat</h3>
+            <p>Satu invoice untuk Anda, ribuan transfer otomatis ke kreator dari kami. Pajak beres.</p>
+        </div>
+
+        <div class="bento-item">
+            <h3>Aset UGC Hak Milik</h3>
+            <p>Hak guna konten otomatis menjadi milik Brand. Download asset HD untuk Ads kapan saja.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 300px);
+        gap: 24px;
+        margin-top: 60px;
+    }
+    .bento-item {
+        background: white;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-light);
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+        transition: border-color 0.3s ease;
+    }
+    .bento-item:hover { border-color: var(--accent-primary); }
+    .bento-item.large { grid-column: span 2; }
+    .bento-item.tall { grid-row: span 2; background: var(--text-main); color: white; }
+    
+    .bento-item h3 { font-size: 1.5rem; margin-bottom: 12px; }
+    .bento-item p { color: var(--text-muted); }
+    .bento-item.tall p { color: #94A3B8; }
+
+    @media (max-width: 1024px) {
+        .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+        .bento-item.large, .bento-item.tall { grid-column: span 1; grid-row: span 1; }
+    }
+</style>

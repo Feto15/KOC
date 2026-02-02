@@ -1,0 +1,149 @@
+---
+// KOL vs KOC Comparison Section Component
+---
+
+<section class="container section-py">
+    <div style="max-width: 800px; margin-bottom: 60px;">
+        <span class="badge" style="background: #000; color: #fff; border:none; margin-bottom: 20px;">Industry Shift</span>
+        <h2 style="font-size: 3rem; line-height: 1.1; margin-bottom: 24px;">Traditional KOLs are dying. <br><span style="color: var(--text-muted);">Long live the Consumer.</span></h2>
+        <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 600px;">Mengapa brand global beralih dari satu "Mega Influencer" ke ribuan "Micro Voices".</p>
+    </div>
+
+    <div class="editorial-comparison">
+        <!-- Row 1: Audience -->
+        <div class="compare-row-edit">
+            <div class="metric-label">Jumlah Audiens</div>
+            <div class="old-way">
+                <span class="cross-label">KOL (Leader)</span>
+                <div class="val-text">Massif / Besar</div>
+                <div class="val-sub">Fokus pada jangkauan luas tapi kurang spesifik.</div>
+            </div>
+            <div class="new-way">
+                <span class="check-label">KOC (Consumer)</span>
+                <div class="val-text">Niche / Menengah</div>
+                <div class="val-sub">Target audiens spesifik dan sangat loyal.</div>
+            </div>
+        </div>
+
+        <!-- Row 2: Best For -->
+        <div class="compare-row-edit">
+            <div class="metric-label">Paling Cocok Untuk</div>
+            <div class="old-way">
+                <span class="cross-label">KOL</span>
+                <div class="val-text">Brand Awareness</div>
+                <div class="val-sub">Peluncuran produk baru ke pasar luas.</div>
+            </div>
+            <div class="new-way">
+                <span class="check-label">KOC</span>
+                <div class="val-text">Review & Trust</div>
+                <div class="val-sub">Membangun kepercayaan dan konversi penjualan.</div>
+            </div>
+        </div>
+
+        <!-- Row 3: Cost -->
+        <div class="compare-row-edit">
+            <div class="metric-label">Biaya</div>
+            <div class="old-way">
+                <span class="cross-label">KOL</span>
+                <div class="val-text strike">Sangat Tinggi</div>
+                <div class="val-sub">Mahal untuk satu kali posting.</div>
+            </div>
+            <div class="new-way">
+                <span class="check-label">KOC</span>
+                <div class="val-text">Rendah - Sedang</div>
+                <div class="val-sub">Sangat efisien, bisa dapat banyak konten sekaligus.</div>
+            </div>
+        </div>
+
+        <!-- Row 4: Credibility -->
+        <div class="compare-row-edit">
+            <div class="metric-label">Kredibilitas</div>
+            <div class="old-way">
+                <span class="cross-label">KOL</span>
+                <div class="val-text strike">Rendah / Bias</div>
+                <div class="val-sub">Sering dianggap "Iklan Berbayar" (Hard Selling).</div>
+            </div>
+            <div class="new-way">
+                <span class="check-label">KOC</span>
+                <div class="val-text">Sangat Tinggi</div>
+                <div class="val-sub">Audiens lebih percaya review dari sesama konsumen.</div>
+            </div>
+        </div>
+
+         <!-- Row 5: Influence Type -->
+         <div class="compare-row-edit">
+            <div class="metric-label">Tipe Pengaruh</div>
+            <div class="old-way">
+                <span class="cross-label">KOL</span>
+                <div class="val-text">Otoritas (Fans)</div>
+                <div class="val-sub">Hubungan Idola ke Fans (Satu Arah).</div>
+            </div>
+            <div class="new-way">
+                <span class="check-label">KOC</span>
+                <div class="val-text">Peer-to-Peer (Teman)</div>
+                <div class="val-sub">Hubungan setara seperti rekomendasi teman (Dua Arah).</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .editorial-comparison {
+        border-top: 1px solid #000;
+        margin-top: 40px;
+    }
+    .compare-row-edit {
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr;
+        gap: 40px;
+        padding: 40px 0;
+        border-bottom: 1px solid var(--border-light);
+        align-items: flex-start;
+    }
+    .metric-label {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    
+    .old-way { opacity: 0.5; transition: opacity 0.3s; }
+    .old-way:hover { opacity: 0.8; }
+    
+    .new-way { position: relative; }
+
+    .cross-label, .check-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+    }
+    .cross-label { color: #DC2626; }
+    .check-label { color: var(--success-green); }
+
+    .val-text {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        line-height: 1.2;
+    }
+    .val-text.strike {
+        text-decoration: line-through;
+        text-decoration-thickness: 2px;
+        text-decoration-color: rgba(0,0,0,0.2);
+    }
+    .val-sub {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
+
+    @media (max-width: 1024px) {
+        .compare-row-edit { grid-template-columns: 1fr; gap: 24px; }
+        .metric-label { font-size: 0.9rem; color: var(--text-muted); border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; width: 100%; }
+    }
+</style>

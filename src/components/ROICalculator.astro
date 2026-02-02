@@ -1,0 +1,124 @@
+---
+// ROI Calculator Section Component
+---
+
+<section id="roi" class="container section-py" style="background: #F8FAFC; border-radius: 20px;">
+    <div class="roi-wrapper">
+        <div>
+            <h2 style="font-size: 2rem; margin-bottom: 24px;">Proyeksi Pertumbuhan</h2>
+            <p style="color: var(--text-muted); margin-bottom: 32px;">Lihat potensi jangkauan brand Anda berdasarkan budget marketing saat ini.</p>
+            
+            <div class="range-group">
+                <div class="range-label">
+                    <span>Budget Bulanan (IDR)</span>
+                    <span id="budget-val" style="color: var(--accent-primary);">Rp 50.000.000</span>
+                </div>
+                <input type="range" id="slider-budget" min="10000000" max="500000000" step="10000000" value="50000000">
+            </div>
+
+            <div class="range-group">
+                <div class="range-label">
+                    <span>Target Tier KOC</span>
+                    <span style="font-size: 0.9rem; color: var(--text-muted);">Micro (10rb-50rb followers)</span>
+                </div>
+                <input type="range" disabled value="30" style="opacity: 0.5;">
+            </div>
+        </div>
+
+        <div class="roi-result">
+            <h3>Estimasi Dampak</h3>
+            <div style="margin: 24px 0;">
+                <div style="font-size: 0.9rem; color: var(--text-muted);">Est. Jumlah Konten</div>
+                <div class="big-number" id="res-content">250</div>
+            </div>
+            <div style="border-top: 1px solid #E2E8F0; padding-top: 24px;">
+                 <div style="font-size: 0.9rem; color: var(--text-muted);">Total Authentic Views</div>
+                 <div class="big-number" id="res-views" style="font-size: 2.5rem; color: var(--text-main);">1.2M+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const sliderBudget = document.getElementById('slider-budget');
+    const budgetVal = document.getElementById('budget-val');
+    const resContent = document.getElementById('res-content');
+    const resViews = document.getElementById('res-views');
+
+    function formatIDR(num) {
+        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
+    }
+
+    function formatCompact(num) {
+        return new Intl.NumberFormat('en-US', { notation: "compact", compactDisplay: "short" }).format(num);
+    }
+
+    function updateROI() {
+        const budget = parseInt(sliderBudget.value);
+        budgetVal.innerText = formatIDR(budget);
+
+        const costPerContent = 200000;
+        const avgViews = 3500;
+
+        const contentCount = Math.floor(budget / costPerContent);
+        const totalViews = contentCount * avgViews;
+
+        resContent.innerText = contentCount;
+        resViews.innerText = formatCompact(totalViews) + "+";
+    }
+
+    sliderBudget.addEventListener('input', updateROI);
+    updateROI();
+</script>
+
+<style>
+    .roi-wrapper {
+        background: #fff;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-light);
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .range-group { margin-bottom: 24px; }
+    .range-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; }
+    input[type=range] {
+        width: 100%;
+        height: 6px;
+        background: #E2E8F0;
+        border-radius: 4px;
+        -webkit-appearance: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        background: var(--accent-primary);
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+    }
+
+    .roi-result {
+        background: #F8FAFC;
+        border-radius: var(--radius-md);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .big-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--accent-primary);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        margin: 10px 0;
+    }
+
+    @media (max-width: 1024px) {
+        .roi-wrapper { grid-template-columns: 1fr; }
+    }
+</style>
