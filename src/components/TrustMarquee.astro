@@ -1,94 +1,40 @@
 ---
 // Trust Marquee Section Component
+const logos = [
+    { src: "/501078072_17845169487488494_8059935198862646351_n (1).jpg", alt: "Client Logo 1" },
+    { src: "/515577617_18049221800529987_6480858581698957919_n (1).jpg", alt: "Client Logo 2" },
+    { src: "/541611017_18073535726038934_5794692521640028942_n.jpg", alt: "Client Logo 3" },
+    { src: "/558262699_17847145893573011_2645595788778119117_n.jpg", alt: "Client Logo 4" },
+    { src: "/image (2).png", alt: "Client Logo 5" },
+    { src: "/image (5).png", alt: "Client Logo 6" },
+    { src: "/image (6).png", alt: "Client Logo 7" },
+    { src: "/image (7).png", alt: "Client Logo 8" },
+    { src: "/image (8).png", alt: "Client Logo 9" },
+    { src: "/image (9).png", alt: "Client Logo 10" },
+];
 ---
 
 <section class="trust-section">
     <div class="container">
-        <p style="margin-bottom: 32px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-weight: 700; opacity: 0.7;">Dipercaya oleh Tim Growth Terdepan</p>
+        <p style="margin-bottom: 32px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-weight: 700; opacity: 0.7;">Dipercaya oleh</p>
         
         <div class="marquee-wrapper">
             <div class="marquee-track">
                 <!-- Group 1 -->
                 <div class="logo-group">
-                    <div class="logo-item" title="GoTech Group">
-                        <svg class="client-logo" style="width: 140px;" viewBox="0 0 140 30" fill="currentColor">
-                            <circle cx="15" cy="15" r="10" />
-                            <text x="35" y="22" font-family="Plus Jakarta Sans" font-weight="800" font-size="20">GoNiaga</text>
-                        </svg>
-                    </div>
-                    <div class="logo-item" title="TravelOne">
-                        <svg class="client-logo" style="width: 140px;" viewBox="0 0 140 30" fill="currentColor">
-                            <path d="M10 5 L25 15 L10 25 M25 5 L10 15 L25 25" stroke="currentColor" stroke-width="3" fill="none"/>
-                            <text x="40" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">Travelia</text>
-                        </svg>
-                    </div>
-                    <div class="logo-item" title="ShopNow">
-                        <svg class="client-logo" style="width: 150px;" viewBox="0 0 150 30" fill="currentColor">
-                            <path d="M10 20 Q20 5 30 20 T50 20" stroke="currentColor" stroke-width="3" fill="none"/>
-                            <text x="60" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">Belanja.id</text>
-                        </svg>
-                    </div>
-                    <div class="logo-item" title="NeoBank">
-                        <svg class="client-logo" style="width: 160px;" viewBox="0 0 160 30" fill="currentColor">
-                            <rect x="0" y="5" width="25" height="20" rx="4"/>
-                            <text x="35" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">BankJagoan</text>
-                        </svg>
-                    </div>
-                     <div class="logo-item" title="EduSmart">
-                        <svg class="client-logo" style="width: 170px;" viewBox="0 0 170 30" fill="currentColor">
-                            <path d="M15 5 L25 25 L5 25 Z" />
-                            <text x="35" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">RuangBelajar</text>
-                        </svg>
-                    </div>
-                     <div class="logo-item" title="TelcoIndo">
-                        <svg class="client-logo" style="width: 150px;" viewBox="0 0 150 30" fill="currentColor">
-                            <circle cx="10" cy="15" r="5" />
-                            <circle cx="25" cy="15" r="5" />
-                            <circle cx="40" cy="15" r="5" />
-                            <text x="55" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">TelkomNet</text>
-                        </svg>
-                    </div>
+                    {logos.map((logo) => (
+                        <div class="logo-item">
+                            <img src={logo.src} alt={logo.alt} class="client-logo" />
+                        </div>
+                    ))}
                 </div>
                  <!-- Group 2 (Duplicate for loop) -->
                  <div class="logo-group">
-                    <div class="logo-item" title="GoTech Group">
-                        <svg class="client-logo" style="width: 140px;" viewBox="0 0 140 30" fill="currentColor">
-                            <circle cx="15" cy="15" r="10" />
-                            <text x="35" y="22" font-family="Plus Jakarta Sans" font-weight="800" font-size="20">GoNiaga</text>
-                        </svg>
-                    </div>
-                    <div class="logo-item" title="TravelOne">
-                        <svg class="client-logo" style="width: 140px;" viewBox="0 0 140 30" fill="currentColor">
-                            <path d="M10 5 L25 15 L10 25 M25 5 L10 15 L25 25" stroke="currentColor" stroke-width="3" fill="none"/>
-                            <text x="40" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">Travelia</text>
-                        </svg>
-                    </div>
-                    <div class="logo-item" title="ShopNow">
-                        <svg class="client-logo" style="width: 150px;" viewBox="0 0 150 30" fill="currentColor">
-                            <path d="M10 20 Q20 5 30 20 T50 20" stroke="currentColor" stroke-width="3" fill="none"/>
-                            <text x="60" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">Belanja.id</text>
-                        </svg>
-                    </div>
-                    <div class="logo-item" title="NeoBank">
-                        <svg class="client-logo" style="width: 160px;" viewBox="0 0 160 30" fill="currentColor">
-                            <rect x="0" y="5" width="25" height="20" rx="4"/>
-                            <text x="35" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">BankJagoan</text>
-                        </svg>
-                    </div>
-                     <div class="logo-item" title="EduSmart">
-                        <svg class="client-logo" style="width: 170px;" viewBox="0 0 170 30" fill="currentColor">
-                            <path d="M15 5 L25 25 L5 25 Z" />
-                            <text x="35" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">RuangBelajar</text>
-                        </svg>
-                    </div>
-                     <div class="logo-item" title="TelcoIndo">
-                        <svg class="client-logo" style="width: 150px;" viewBox="0 0 150 30" fill="currentColor">
-                            <circle cx="10" cy="15" r="5" />
-                            <circle cx="25" cy="15" r="5" />
-                            <circle cx="40" cy="15" r="5" />
-                            <text x="55" y="22" font-family="Plus Jakarta Sans" font-weight="700" font-size="20">TelkomNet</text>
-                        </svg>
-                    </div>
+                    {logos.map((logo) => (
+                        <div class="logo-item">
+                            <img src={logo.src} alt={logo.alt} class="client-logo" />
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
@@ -122,13 +68,19 @@
         padding-right: 60px;
     }
     .client-logo {
-        height: 32px;
+        height: 48px;
         width: auto;
-        color: #94A3B8;
-        transition: color 0.3s;
+        object-fit: contain;
+        opacity: 1;
+        transition: all 0.3s ease;
     }
-    .client-logo:hover {
-        color: var(--accent-primary);
+    .logo-item {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+    .logo-item:hover .client-logo {
+        transform: scale(1.05);
     }
     @keyframes marquee-scroll {
         0% { transform: translateX(0); }

@@ -4,8 +4,9 @@
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import TrustMarquee from '../components/TrustMarquee.astro';
-import Features from '../components/Features.astro';
 import Comparison from '../components/Comparison.astro';
+import StatsImpact from '../components/StatsImpact.astro';
+import UGCGallery from '../components/UGCGallery.astro';
 import ROICalculator from '../components/ROICalculator.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
@@ -18,30 +19,31 @@ import Footer from '../components/Footer.astro';
     <title>Solusi KOC untuk Brand | Scale Your Reach</title>
     <meta name="description" content="Platform manajemen KOC nomor 1 untuk Brand. Automasi campaign, tracking transparan, dan hasil yang terukur.">
     
-    <!-- Google Fonts -->
+    <!-- Fonts: 'Manrope' (Headings) & 'DM Sans' (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style is:global>
         :root {
-            /* Palette: B2B Tech */
-            --bg-body: #FAFAFA;
-            --bg-surface: #FFFFFF;
-            --text-main: #111827;
-            --text-muted: #4B5563;
-            --accent-primary: #020617;
-            --accent-dark: #000000;
-            --border-light: #E5E7EB;
-            --success-green: #059669;
+            /* Palette: Warm Editorial (Adjusted) */
+            --bg-body: #F3F2ED; /* Deeper Warm Stone/Beige */
+            --bg-surface: #E6E4DD; /* Darker Beige Accent */
+            --text-main: #242220; /* Soft Black */
+            --text-muted: #6B665E; /* Warm Gray */
+            
+            --accent-primary: #1C1B1A;
+            --accent-soft: #D6D3C9;
+            
+            --border-light: #DDD9CF;
             
             /* Spacing */
             --container-width: 1280px;
             --header-height: 80px;
             
-            /* Radius */
-            --radius-md: 12px;
-            --radius-lg: 24px;
+            /* Radius - Sharper */
+            --radius-md: 6px;
+            --radius-lg: 12px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,18 +54,22 @@ import Footer from '../components/Footer.astro';
             font-family: 'DM Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.025em;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
         }
 
         a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
         ul { list-style: none; }
         button { cursor: pointer; border: none; font-family: inherit; }
+
+        img { display: block; max-width: 100%; border-radius: var(--radius-md); }
 
         /* --- GLOBAL UTILS --- */
         .container {
@@ -75,20 +81,20 @@ import Footer from '../components/Footer.astro';
         .badge {
             display: inline-flex;
             align-items: center;
-            padding: 4px 12px;
-            background: #F1F5F9;
+            padding: 6px 14px;
+            background: var(--bg-surface);
             color: var(--text-main);
-            border-radius: 99px;
-            font-size: 0.85rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
             font-weight: 600;
             border: 1px solid var(--border-light);
-            margin-bottom: 16px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, var(--text-main) 0%, #475569 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-main); /* No gradient, solid editorial color */
         }
 
         .section-py { padding: 100px 0; }
@@ -98,38 +104,46 @@ import Footer from '../components/Footer.astro';
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 28px;
+            padding: 16px 32px;
             font-weight: 600;
-            border-radius: 10px;
+            border-radius: var(--radius-lg);
             transition: all 0.2s ease;
+            font-size: 0.95rem;
         }
         .btn-primary {
             background: var(--text-main);
-            color: white;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+            color: #FDFCF8;
         }
         .btn-primary:hover {
+            opacity: 0.9;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
         }
         .btn-secondary {
-            background: white;
+            background: transparent;
             border: 1px solid var(--border-light);
             color: var(--text-main);
         }
         .btn-secondary:hover {
-            border-color: var(--text-muted);
-            background: #F8FAFC;
+            border-color: var(--text-main);
+            background: var(--bg-surface);
+        }
+        
+        /* Mobile Typography Override */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem !important; }
+            h2 { font-size: 2rem !important; }
+            .section-py { padding: 60px 0; }
         }
     </style>
 </head>
 <body>
     <Header />
     <Hero />
-    <TrustMarquee />
-    <Features />
+    <UGCGallery />
+    <StatsImpact />
     <Comparison />
-    <ROICalculator />
+    <TrustMarquee />
+    {/* <ROICalculator /> */}
     <CTA />
     <Footer />
 </body>

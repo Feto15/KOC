@@ -1,0 +1,98 @@
+---
+// Stats Impact Section Component
+const stats = [
+    { label: "Total Views", value: "1,107,346", icon: "👁️" },
+    { label: "Total Likes", value: "15,238", icon: "❤️" },
+    { label: "Total Comments", value: "1,336", icon: "💬" },
+    { label: "Total Shares", value: "5,424", icon: "🔗" }
+];
+---
+
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            {stats.map((stat) => (
+                <div class="stat-item">
+                    <div class="stat-icon">{stat.icon}</div>
+                    <div class="stat-content">
+                        <span class="stat-value">{stat.value}</span>
+                        <span class="stat-label">{stat.label}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .stats-section {
+        background: #1C1B1A; /* Premium Dark Match with CTA */
+        padding: 60px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        align-items: center;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: #FDFCF8;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+        opacity: 0.8;
+    }
+
+    .stat-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stat-value {
+        font-family: 'Manrope', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        color: rgba(253, 252, 248, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        margin-top: 4px;
+    }
+
+    /* Tablet Responsive */
+    @media (max-width: 1024px) {
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 20px;
+        }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 640px) {
+        .stats-section {
+            padding: 40px 0;
+        }
+        .stat-item {
+            gap: 12px;
+        }
+        .stat-value {
+            font-size: 1.4rem;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+        }
+    }
+</style>

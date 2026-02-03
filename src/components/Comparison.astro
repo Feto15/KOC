@@ -2,11 +2,11 @@
 // KOL vs KOC Comparison Section Component
 ---
 
-<section class="container section-py">
-    <div style="max-width: 800px; margin-bottom: 60px;">
-        <span class="badge" style="background: #000; color: #fff; border:none; margin-bottom: 20px;">Industry Shift</span>
-        <h2 style="font-size: 3rem; line-height: 1.1; margin-bottom: 24px;">Traditional KOLs are dying. <br><span style="color: var(--text-muted);">Long live the Consumer.</span></h2>
-        <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 600px;">Mengapa brand global beralih dari satu "Mega Influencer" ke ribuan "Micro Voices".</p>
+<section class="container comparison-section" style="padding: 60px 24px;">
+    <div style="max-width: 800px; margin-bottom: 24px;">
+        <span class="badge" style="background: #000; color: #fff; border:none; margin-bottom: 12px; font-size: 0.75rem;">Industry Shift</span>
+        <h2 style="font-size: 1.75rem; line-height: 1.1; margin-bottom: 12px; color: #000;">Traditional KOLs are dying. <br>Long live the Consumer.</h2>
+        <p style="font-size: 1rem; color: var(--text-muted); max-width: 600px;">Mengapa brand global beralih dari satu "Mega Influencer" ke ribuan "Micro Voices".</p>
     </div>
 
     <div class="editorial-comparison">
@@ -45,7 +45,7 @@
             <div class="metric-label">Biaya</div>
             <div class="old-way">
                 <span class="cross-label">KOL</span>
-                <div class="val-text strike">Sangat Tinggi</div>
+                <div class="val-text">Sangat Tinggi</div>
                 <div class="val-sub">Mahal untuk satu kali posting.</div>
             </div>
             <div class="new-way">
@@ -60,7 +60,7 @@
             <div class="metric-label">Kredibilitas</div>
             <div class="old-way">
                 <span class="cross-label">KOL</span>
-                <div class="val-text strike">Rendah / Bias</div>
+                <div class="val-text">Rendah / Bias</div>
                 <div class="val-sub">Sering dianggap "Iklan Berbayar" (Hard Selling).</div>
             </div>
             <div class="new-way">
@@ -90,25 +90,31 @@
 <style>
     .editorial-comparison {
         border-top: 1px solid #000;
-        margin-top: 40px;
+        margin-top: 24px;
     }
     .compare-row-edit {
         display: grid;
-        grid-template-columns: 200px 1fr 1fr;
-        gap: 40px;
-        padding: 40px 0;
+        grid-template-columns: 180px 1fr 1fr;
+        gap: 24px;
+        padding: 16px 0;
         border-bottom: 1px solid var(--border-light);
         align-items: flex-start;
     }
     .metric-label {
         font-family: 'Plus Jakarta Sans', sans-serif;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 0.7rem;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.1em;
+        background: rgba(0,0,0,0.05);
+        padding: 4px 8px;
+        border-radius: 4px;
+        width: fit-content;
+        color: #000;
+        line-height: 1;
     }
     
-    .old-way { opacity: 0.5; transition: opacity 0.3s; }
+    .old-way { opacity: 0.7; transition: opacity 0.3s; }
     .old-way:hover { opacity: 0.8; }
     
     .new-way { position: relative; }
@@ -126,15 +132,17 @@
 
     .val-text {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 600;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
         line-height: 1.2;
     }
-    .val-text.strike {
-        text-decoration: line-through;
-        text-decoration-thickness: 2px;
-        text-decoration-color: rgba(0,0,0,0.2);
+    .new-way .val-text {
+        color: #000;
+    }
+    .new-way .val-sub {
+        color: #242220; /* Solid dark text for KOC */
+        font-weight: 500;
     }
     .val-sub {
         font-size: 0.95rem;
@@ -143,7 +151,12 @@
     }
 
     @media (max-width: 1024px) {
-        .compare-row-edit { grid-template-columns: 1fr; gap: 24px; }
-        .metric-label { font-size: 0.9rem; color: var(--text-muted); border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; width: 100%; }
+        .compare-row-edit { 
+            grid-template-columns: 1fr; 
+            gap: 12px; 
+            padding: 12px 0; 
+        }
+        .metric-label { margin-bottom: 4px; }
+        .val-text { font-size: 1.1rem; }
     }
 </style>
